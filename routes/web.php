@@ -7,3 +7,6 @@ Route::get('/login', 'Web\AppController@getLogin')->name('login')->middleware('g
 
 Route::get('/login/google','Web\AuthController@getSocialRedirect')->middleware('guest');
 Route::get('/login/google/callback','Web\AuthController@getSocialCallback')->middleware('guest');
+Route::get('/logout', 'Web\AuthController@logout')->name('logout')->middleware('guest');
+
+Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');

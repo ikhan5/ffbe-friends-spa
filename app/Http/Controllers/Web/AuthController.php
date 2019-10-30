@@ -41,6 +41,12 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/');
+        return redirect('/home');
+    }
+
+    
+    public function logout(){
+        Auth::logout();
+        return redirect('/login');
     }
 }
