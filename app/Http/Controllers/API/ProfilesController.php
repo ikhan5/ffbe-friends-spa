@@ -9,18 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
-      /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $user_id = Auth::id();
-        $user_info = Profile::where('user_id', $user_id)->get();
-       
-       return $user_info;
-    }
+    { }
 
     /**
      * Show the form for creating a new resource.
@@ -60,7 +55,8 @@ class ProfilesController extends Controller
      */
     public function show($id)
     {
-        //
+        $user_info = Profile::where('user_id', $id)->get();
+        return $user_info;
     }
 
     /**

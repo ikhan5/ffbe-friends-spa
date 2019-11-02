@@ -8,6 +8,7 @@ import Header from "./components/global/Header";
 import Spinner from "./components/Spinner";
 
 import { routes } from "./routes";
+import store from './store';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -36,5 +37,6 @@ const app = new Vue({
         App,
         AppHeader: Header
     },
-    router
+    router,
+    store
 });
